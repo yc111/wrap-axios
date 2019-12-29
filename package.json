@@ -8,7 +8,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "keywords": ["axios"],
+  "keywords": [
+    "axios"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yc111/wrap-axios.git"
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/yc111/wrap-axios#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.4.4",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",

@@ -46,12 +46,22 @@ class NewAxios {
           default:
             break;
         }
+        console.log('err.response: ', err);
         return Promise.reject(err.response);
+      }
+      if (err.request) { // 请求超时处理
+        if (err.request.readyState === 4 && err.request.status === 0) {
+          // 当一个请求在上面的timeout属性中设置的时间内没有完成，则触发超时错误
+          // todo handler request timeout error
+        }
+        console.log('err.request: ', err);
+        return Promise.reject(err.request);
       }
       if (!window.navigator.online) { // 断网处理
         // todo: jump to offline page
         return -1;
       }
+      console.log('err: ', err);
       return Promise.reject(err);
     });
   }
